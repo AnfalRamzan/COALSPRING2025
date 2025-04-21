@@ -1,0 +1,52 @@
+➢ Accumulator Register (A, AX, EAX, RAX)
+• Acts as a central register for processing data.
+• Stores intermediate results of operations.
+• Supports input and output data transfers.
+▪ AX: Extended to 16 bits.
+▪ EAX: Extended to 32 bits.
+▪ RAX: Further extended to 64 bits .
+➢ Base Register (B, BX, EBX, RBX)
+• Holds base addresses for memory access, especially in Indexed and Base Addressing 
+Modes.
+• Stores during operations.
+• Assists in array indexing by providing base addresses.
+➢ Count Register (C, CX, ECX, RCX)
+• Stores the loop count in iterative operations.
+• Used with LOOP instructions to control repetitions.
+➢Data Register (D, DX, EDX, RDX)
+• Temporarily stores data for processing.
+• Holds high-order bits in multiplication and division operations.
+Question 2:Describe the role of index registers in source and destination 
+operations. Provide an example using SI and DI in an assembly instruction
+➢ Source Index (SI):
+• Holds the address of the source data in memory.
+• Used in string operations to read data from memory.
+➢ Destination Index (DI):
+• Stores the address of the destination location in memory.
+• Helps in writing data to memory during string operations.
+Question 03:Briefly describe the functions of these bits
+• Overflow Flag (OF)
+• Zero Flag (ZF)
+• Carry Flag (CF)
+➢ Overflow Flag (OF):
+• Indicates overflow when the result of a signed arithmetic operation is too large to fit in the 
+destination register.
+• Example: Adding two positive numbers and getting a negative result in signed arithmetic.
+➢ Zero Flag (ZF):
+• Set to 1 if the result of an operation is zero.
+• Set to 0 if the result is non-zero.
+• Useful for conditional statements and loops.
+➢ Carry Flag (CF):
+• Indicates a carry out of the most significant bit in unsigned arithmetic operations.
+• Shows when addition produces a carry or subtraction needs a borrow.
+• Important for multi-byte arithmetic.
+Question No 04: Write a simple program using MOV, ADD, 
+and SUB instructions:
+• Move values to registers
+• Perform addition and subtraction
+• Store and display results
+MOV DL,6 ; Move value into DL DL = 6
+MOV AL,5 ;Move value into AL,AL=5
+SUB DL, AL ; sub 6-5, DL=1
+MOV AL, 9 ; AL=9
+ADD DL, AL; 7
