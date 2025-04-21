@@ -1,0 +1,142 @@
+TASK 01:
+.model small
+.stack 100h
+.data
+.code
+main proc
+    mov dl,'1'
+    mov cx,5
+    mov ah,2
+    label1:
+    int 21h
+    add dl,2
+    loop label1
+    mov dx,10
+    mov ah,2
+    int 21h
+    mov dx,13
+    int 21h
+    mov ah,4ch
+    int 21h
+    main endp
+   
+
+end main
+**************************************
+
+TASK 02
+.model small
+.stack 100h
+.data
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    mov cx, 5      
+    mov bl, 8       
+
+print_even_reverse:
+    mov ah, 2
+    mov dl, bl
+    add dl, '0'
+    int 21h
+
+    mov ah, 2
+    mov dl, 10
+    int 21h
+    mov dl, 13
+    int 21h
+
+    sub bl, 2      
+    loop print_even_reverse
+
+    mov ah, 4ch
+    int 21h
+end main
+*****************************
+
+TASK 03:
+.model small
+.stack 100h
+.data
+    sum db 0
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    mov al, 1
+    add al, 2
+    add al, 3
+
+    
+    add al, '0'     
+    mov ah, 2
+    mov dl, al
+    int 21h
+
+    mov ah, 4ch
+    int 21h
+end main
+******************************************
+
+TASK 05:
+.model small
+.stack 100h
+.data
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    mov cl, 'a'
+
+print_letters:
+    mov ah, 2
+    mov dl, cl
+    int 21h
+
+    inc cl
+    cmp cl, 'z'+1
+    jne print_letters
+
+    mov ah, 4ch
+    int 21h
+end main
+*************************************
+
+TASK 05:
+.model small
+.stack 100h
+.data
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    mov cx, 10     
+    mov bl, 9      
+
+print_reverse:
+    mov ah, 2
+    mov dl, bl
+    add dl, '0'    
+    int 21h
+
+    
+    mov ah, 2
+    mov dl, 10
+    int 21h
+    mov dl, 13
+    int 21h
+
+    dec bl
+    loop print_reverse
+
+    mov ah, 4ch
+    int 21h
+end main
+***************************
+
+
