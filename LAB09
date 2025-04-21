@@ -1,0 +1,143 @@
+TASK 01:
+Write an assembly language that compares the values A and B and prints a message if the value in A is greater than B, less than B.
+.model small
+.stack 100h
+.data
+    A db 8
+    B db 54
+    msg1 db 'A is greater than B$'
+    msg2 db 'A is less than B$'
+
+.code
+Main proc
+    mov ax, @data
+    mov ds, ax
+
+    mov al, A
+    cmp al, B
+    jg greater
+    jl lesser
+
+    lea dx, msg1
+    mov ah, 09h
+    int 21h
+    jmp exit
+    lea dx, msg2
+    mov ah, 09h
+    int 21h
+    mov ah, 4ch
+    int 21h
+end mainp
+end main
+
+**********************************************************
+TASK 02:
+Write an assembly language program that allow user to input one-digit number and determine the number is positive or zero.
+
+.model small
+.stack 100h
+.data
+    msg_pos db 'The number is positive.$'
+    msg_zero db 'The number is zero.$'
+
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    
+    mov ah, 01h
+    int 21h        
+    sub al, '0'     
+
+    cmp al, 0
+    je is_zero
+
+    
+    lea dx, msg_pos
+    mov ah, 09h
+    int 21h
+    jmp exit
+
+
+    lea dx, msg_zero
+    mov ah, 09h
+    int 21h
+
+
+    mov ah, 4ch
+    int 21h
+end mainp
+main end
+
+
+******************************************************************
+TASK 03:
+Write an assembly language program that allow user to input one-digit number and determine if it is even or odd.
+
+.model small
+.stack 100h
+.data
+    even_msg db 'The number is Even.$'
+    odd_msg  db 'The number is Odd.$'
+
+.code
+Main proc
+    mov ax, @data
+    mov ds, ax
+    mov ah, 01h
+    int 21h
+    sub al, '0'
+    mov ah, 0
+    mov bl, 2
+    div bl      
+
+    cmp ah, 0
+    je even
+
+    lea dx, odd_msg
+    mov ah, 09h
+    int 21h
+    jmp exit
+    lea dx, even_msg
+    mov ah, 09h
+    int 21h
+
+    mov ah, 4ch
+    int 21h
+end mainp
+main end
+
+**********************************************************
+TASK 04:
+Create an assembly program which takes your Marks as input, if your marks are less than 5 messages should be displayed “Need hard work” else print “Satisfactory”.
+.model small
+.stack 100h
+.data
+    msg1 db 'Need hard work$'
+    msg2 db 'Satisfactory$'
+
+.code
+Main proc
+    mov ax, @data
+    mov ds, ax
+    mov ah, 01h
+    int 21h
+    sub al, '0'      
+
+    cmp al, 5
+    jl low_marks    
+    lea dx, msg2
+    mov ah, 09h
+    int 21h
+    jmp exit
+    lea dx, msg1
+    mov ah, 09h
+    int 21h
+    mov ah, 4ch
+    int 21h
+end mainp
+main end
+
+**********************************************************
+
