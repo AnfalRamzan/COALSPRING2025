@@ -1,0 +1,56 @@
+TASK 01:
+     
+  .model small
+  .stack 100h
+.data  
+
+.code  
+main proc
+    mov dl, '5'  ;   
+    mov ah, 2h  
+    INT 21H  
+
+    mov dl, '4'  ;  
+    mov ah, 2h  
+    INT 21H 
+    mov dl, '2'  ;  
+    mov ah, 2h  
+    INT 21H   
+             
+      
+       mov dl, '2'  ;  
+    mov ah, 2h  
+    INT 21H        
+      mov dl, '2'  ;  
+    mov ah, 2h  
+    INT 21H 
+    mov ah,4ch 
+    INT 21H      
+     main endp 
+end main
+*************************************************************
+
+TASK 02:
+  .model small
+  .stack 100h
+.data  
+
+.code  
+main proc
+   
+    mov ah, 1  
+    INT 21h 
+    mov bl,al
+    mov ah,1
+    INT 21h
+    add bl,al
+    sub bl, 30h
+    mov dl,bl 
+    mov ah,2
+    INT 21h
+    mov ah, 4ch
+    INT 21h
+    main endp
+end main
+**********************************************
+   
