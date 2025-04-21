@@ -1,0 +1,59 @@
+TASK 01:
+;to display the character'e' org 100H
+.data
+.code
+main proc
+mov dl,'e' mov ah,2h
+INT 21h
+main endp
+end main
+***********************************************************
+Task 02:
+;to display the character'a' org 100H
+.data
+.code
+main proc
+mov dl,'a' mov ah,2h
+INT 21h
+mov dl,'n' mov ah,2h
+INT 21h
+mov dl,'f' mov ah,2h
+INT 21h
+mov dl,'a' mov ah,2h
+INT 21h
+mov dl,'l' mov ah,2h
+INT 21h
+main endp
+end main
+Task 03:
+org 100H
+.data
+.code
+main proc
+mov dl,101
+mov ah,1h
+INT 21H
+mov dl,102
+mov ah,1h
+INT 21H
+mov dl,103
+mov ah,1h
+INT 21h
+mov dl,105
+mov ah,2h
+INT 21H
+mov dl, 101-32
+mov ah,2h
+INT 21H
+mov dl,102-32
+mov ah,2h
+INT 21H
+mov dl,103-32
+mov ah,2h
+INT 21H
+mov dl,105
+mov ah,2h
+INT 21H
+main endp
+end main
+**********************************************************
